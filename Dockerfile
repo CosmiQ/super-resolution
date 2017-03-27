@@ -1,4 +1,4 @@
-FROM nvidia/cuda:8.0-cudnn5-devel
+FROM comsiqworks/spacenet-utilites-gpu
 
 MAINTAINER Patrick Hagerty
 
@@ -43,8 +43,12 @@ RUN pip --no-cache-dir install \
         && \
     python -m ipykernel.kernelspec
 
+ENV GIT_BASE=/opt/
+WORKDIR $GIT_BASE
 # Set up our notebook config.
-WORKDIR /root
+RUN git clone --depth 1 https://github.com/CosmiQ/super-resolution.git
+
+WORKDIR /workspace
 
 # TensorBoard
 RUN ["/bin/bash"]
