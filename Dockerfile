@@ -1,4 +1,4 @@
-FROM comsiqworks/spacenet-utilites-gpu
+FROM cosmiqworks/spacenet-utilities-gpu
 
 MAINTAINER Patrick Hagerty
 
